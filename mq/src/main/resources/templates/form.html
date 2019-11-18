@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8">
+  <title>机票检索信息录入</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+</head>
+<body>
+
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+  <legend>机票检索信息录入</legend>
+</fieldset>
+
+<form class="layui-form" action="/addTask" method="post">
+
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">姓名</label>
+      <div class="layui-input-inline">
+        <input type="tel" name="username" placeholder="怎么称呼您" lay-verify="required" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">期望价格</label>
+      <div class="layui-input-inline">
+        <input type="text" name="price" placeholder="期望的机票价格" lay-verify="required|number" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">电话</label>
+      <div class="layui-input-inline">
+        <input type="tel" name="phone" placeholder="30分钟内只发送1次短信" lay-verify="required|phone" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">邮箱</label>
+      <div class="layui-input-inline">
+        <input type="text" name="email" placeholder="30分钟内只发送1次邮件" lay-verify="required|email" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">出发城市</label>
+      <div class="layui-input-inline">
+        <select name="departCity" lay-verify="required" lay-search="">
+          <option selected value="北京">北京</option>
+          <option value="重庆">重庆</option>
+          <option value="长沙">长沙</option>
+          <option value="成都">成都</option>
+          <option value="上海虹桥">上海</option>
+          <option value="广州">广州</option>
+          <option value="杭州">杭州</option>
+          <option value="武汉">武汉</option>
+          <option value="南京">南京</option>
+          <option value="昆明">昆明</option>
+          <option value="深圳">深圳</option>
+          <option value="秦皇岛">秦皇岛</option>
+          <option value="安庆">安庆</option>
+          <option value="包头">包头</option>
+          <option value="北海福城">北海福城</option>
+          <option value="常德">常德</option>
+          <option value="郑州">郑州</option>
+          <option value="长春">长春</option>
+          <option value="赤峰">赤峰</option>
+          <option value="长治">长治</option>
+          <option value="清州">清州</option>
+          <option value="济州">济州</option>
+          <option value="常州">常州</option>
+          <option value="大连">大连</option>
+          <option value="敦煌">敦煌</option>
+          <option value="东营">东营</option>
+          <option value="张家界">张家界</option>
+          <option value="延安">延安</option>
+          <option value="阜阳">阜阳</option>
+          <option value="福州">福州</option>
+          <option value="广元">广元</option>
+          <option value="海口">海口</option>
+          <option value="呼和浩特">呼和浩特</option>
+          <option value="合肥">合肥</option>
+          <option value="海拉尔">海拉尔</option>
+          <option value="哈尔滨">哈尔滨</option>
+          <option value="舟山">舟山</option>
+          <option value="台州">台州</option>
+          <option value="银川">银川</option>
+          <option value="景德镇">景德镇</option>
+          <option value="嘉峪关">嘉峪关</option>
+          <option value="吉林">吉林</option>
+          <option value="泉州">泉州</option>
+          <option value="雅加达">雅加达</option>
+          <option value="锦州">锦州</option>
+          <option value="衢州">衢州</option>
+          <option value="南昌">南昌</option>
+          <option value="赣州">赣州</option>
+          <option value="贵阳">贵阳</option>
+          <option value="桂林">桂林</option>
+          <option value="兰州">兰州</option>
+          <option value="丽江">丽江</option>
+          <option value="拉萨">拉萨</option>
+          <option value="洛阳">洛阳</option>
+          <option value="连云港">连云港</option>
+          <option value="临沂">临沂</option>
+          <option value="柳州">柳州</option>
+          <option value="泸州">泸州</option>
+          <option value="牡丹江">牡丹江</option>
+          <option value="绵阳">绵阳</option>
+          <option value="齐齐哈尔">齐齐哈尔</option>
+          <option value="宁波">宁波</option>
+          <option value="南宁">南宁</option>
+          <option value="南阳">南阳</option>
+          <option value="南通">南通</option>
+          <option value="槟城">槟城</option>
+          <option value="西安">西安</option>
+          <option value="石家庄">石家庄</option>
+          <option value="汕头">汕头</option>
+          <option value="三亚">三亚</option>
+          <option value="青岛">青岛</option>
+          <option value="塔什干">塔什干</option>
+          <option value="铜仁">铜仁</option>
+          <option value="济南">济南</option>
+          <option value="天津">天津</option>
+          <option value="黄山">黄山</option>
+          <option value="太原">太原</option>
+          <option value="乌鲁木齐">乌鲁木齐</option>
+          <option value="潍坊">潍坊</option>
+          <option value="威海">威海</option>
+          <option value="温州">温州</option>
+          <option value="武夷山">武夷山</option>
+          <option value="万县">万县</option>
+          <option value="襄樊">襄樊</option>
+          <option value="锡林">锡林</option>
+          <option value="厦门">厦门</option>
+          <option value="西宁">西宁</option>
+          <option value="徐州">徐州</option>
+          <option value="宜宾">宜宾</option>
+          <option value="宜昌">宜昌</option>
+          <option value="义乌">义乌</option>
+          <option value="延吉">延吉</option>
+          <option value="烟台">烟台</option>
+          <option value="湛江">湛江</option>
+          <option value="珠海">珠海</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">到达城市</label>
+      <div class="layui-input-inline">
+        <select name="arriveCity" lay-verify="required" lay-search="">
+          <option value="北京">北京</option>
+          <option selected value="重庆">重庆</option>
+          <option value="长沙">长沙</option>
+          <option value="成都">成都</option>
+          <option value="上海虹桥">上海</option>
+          <option value="广州">广州</option>
+          <option value="杭州">杭州</option>
+          <option value="武汉">武汉</option>
+          <option value="南京">南京</option>
+          <option value="昆明">昆明</option>
+          <option value="深圳">深圳</option>
+          <option value="秦皇岛">秦皇岛</option>
+          <option value="安庆">安庆</option>
+          <option value="包头">包头</option>
+          <option value="北海福城">北海福城</option>
+          <option value="常德">常德</option>
+          <option value="郑州">郑州</option>
+          <option value="长春">长春</option>
+          <option value="赤峰">赤峰</option>
+          <option value="长治">长治</option>
+          <option value="清州">清州</option>
+          <option value="济州">济州</option>
+          <option value="常州">常州</option>
+          <option value="大连">大连</option>
+          <option value="敦煌">敦煌</option>
+          <option value="东营">东营</option>
+          <option value="张家界">张家界</option>
+          <option value="延安">延安</option>
+          <option value="阜阳">阜阳</option>
+          <option value="福州">福州</option>
+          <option value="广元">广元</option>
+          <option value="海口">海口</option>
+          <option value="呼和浩特">呼和浩特</option>
+          <option value="合肥">合肥</option>
+          <option value="海拉尔">海拉尔</option>
+          <option value="哈尔滨">哈尔滨</option>
+          <option value="舟山">舟山</option>
+          <option value="台州">台州</option>
+          <option value="银川">银川</option>
+          <option value="景德镇">景德镇</option>
+          <option value="嘉峪关">嘉峪关</option>
+          <option value="吉林">吉林</option>
+          <option value="泉州">泉州</option>
+          <option value="雅加达">雅加达</option>
+          <option value="锦州">锦州</option>
+          <option value="衢州">衢州</option>
+          <option value="南昌">南昌</option>
+          <option value="赣州">赣州</option>
+          <option value="贵阳">贵阳</option>
+          <option value="桂林">桂林</option>
+          <option value="兰州">兰州</option>
+          <option value="丽江">丽江</option>
+          <option value="拉萨">拉萨</option>
+          <option value="洛阳">洛阳</option>
+          <option value="连云港">连云港</option>
+          <option value="临沂">临沂</option>
+          <option value="柳州">柳州</option>
+          <option value="泸州">泸州</option>
+          <option value="牡丹江">牡丹江</option>
+          <option value="绵阳">绵阳</option>
+          <option value="齐齐哈尔">齐齐哈尔</option>
+          <option value="宁波">宁波</option>
+          <option value="南宁">南宁</option>
+          <option value="南阳">南阳</option>
+          <option value="南通">南通</option>
+          <option value="槟城">槟城</option>
+          <option value="西安">西安</option>
+          <option value="石家庄">石家庄</option>
+          <option value="汕头">汕头</option>
+          <option value="三亚">三亚</option>
+          <option value="青岛">青岛</option>
+          <option value="塔什干">塔什干</option>
+          <option value="铜仁">铜仁</option>
+          <option value="济南">济南</option>
+          <option value="天津">天津</option>
+          <option value="黄山">黄山</option>
+          <option value="太原">太原</option>
+          <option value="乌鲁木齐">乌鲁木齐</option>
+          <option value="潍坊">潍坊</option>
+          <option value="威海">威海</option>
+          <option value="温州">温州</option>
+          <option value="武夷山">武夷山</option>
+          <option value="万县">万县</option>
+          <option value="襄樊">襄樊</option>
+          <option value="锡林">锡林</option>
+          <option value="厦门">厦门</option>
+          <option value="西宁">西宁</option>
+          <option value="徐州">徐州</option>
+          <option value="宜宾">宜宾</option>
+          <option value="宜昌">宜昌</option>
+          <option value="义乌">义乌</option>
+          <option value="延吉">延吉</option>
+          <option value="烟台">烟台</option>
+          <option value="湛江">湛江</option>
+          <option value="珠海">珠海</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">出发日期</label>
+      <div class="layui-input-inline">
+        <input type="text" name="departDate" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">最早时间</label>
+      <div class="layui-input-inline">
+        <select name="beginTime" lay-filter="aihao">
+          <option value="00:00">0点</option>
+          <option value="01:00">1点</option>
+          <option value="02:00">2点</option>
+          <option value="03:00">3点</option>
+          <option value="04:00">4点</option>
+          <option value="05:00">5点</option>
+          <option value="06:00">6点</option>
+          <option value="07:00">7点</option>
+          <option value="08:00">8点</option>
+          <option selected value="09:00">9点</option>
+          <option value="10:00">10点</option>
+          <option value="11:00">11点</option>
+          <option value="12:00">12点</option>
+          <option value="13:00">13点</option>
+          <option value="14:00">14点</option>
+          <option value="15:00">15点</option>
+          <option value="16:00">16点</option>
+          <option value="17:00">17点</option>
+          <option value="18:00">18点</option>
+          <option value="19:00">19点</option>
+          <option value="20:00">20点</option>
+          <option value="21:00">21点</option>
+          <option value="22:00">22点</option>
+          <option value="23:00">23点</option>
+        </select>
+      </div>
+    </div>
+    <div class="layui-inline">
+      <label class="layui-form-label">最晚时间</label>
+      <div class="layui-input-inline">
+        <select name="endTime" lay-filter="aihao">
+          <option value="00:00">0点</option>
+          <option value="01:00">1点</option>
+          <option value="02:00">2点</option>
+          <option value="03:00">3点</option>
+          <option value="04:00">4点</option>
+          <option value="05:00">5点</option>
+          <option value="06:00">6点</option>
+          <option value="07:00">7点</option>
+          <option value="08:00">8点</option>
+          <option value="09:00">9点</option>
+          <option value="10:00">10点</option>
+          <option value="11:00">11点</option>
+          <option value="12:00">12点</option>
+          <option value="13:00">13点</option>
+          <option value="14:00">14点</option>
+          <option value="15:00">15点</option>
+          <option value="16:00">16点</option>
+          <option value="17:00">17点</option>
+          <option value="18:00">18点</option>
+          <option selected value="19:00">19点</option>
+          <option value="20:00">20点</option>
+          <option value="21:00">21点</option>
+          <option value="22:00">22点</option>
+          <option value="23:00">23点</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="layui-btn" lay-submit="" lay-filter="demo2">提交</button>
+  </div>
+
+</form>
+
+<script src="../static/layui/layui.js"></script>
+<script src="../static/js/jquery-1.11.3.min.js"></script>
+<script>
+  layui.use(['form', 'layedit', 'laydate'], function(){
+    var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+
+    //日期
+    laydate.render({
+      elem: '#date'
+    });
+    laydate.render({
+      elem: '#date1'
+    });
+
+    //创建一个编辑器
+    var editIndex = layedit.build('LAY_demo_editor');
+
+
+    //监听指定开关
+    form.on('switch(switchTest)', function(data){
+      layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+        offset: '6px'
+      });
+      layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+    });
+
+    //监听提交
+    form.on('submit(demo2)', function(data){
+      return true;
+    });
+
+    //表单赋值
+    layui.$('#LAY-component-form-setval').on('click', function(){
+      form.val('example', {
+        "username": "贤心" // "name": "value"
+        ,"password": "123456"
+        ,"interest": 1
+        ,"like[write]": true //复选框选中状态
+        ,"close": true //开关状态
+        ,"sex": "女"
+        ,"desc": "我爱 layui"
+      });
+    });
+
+    //表单取值
+    layui.$('#LAY-component-form-getval').on('click', function(){
+      var data = form.val('example');
+      alert(JSON.stringify(data));
+    });
+
+  });
+</script>
+
+</body>
+</html>
